@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="examModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'exam.dbo.admin_' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="admin_">
+          <Property Name="add_ID" Type="int" />
+          <Property Name="add_namee" Type="varchar" MaxLength="50" />
+          <Property Name="add_passs" Type="varchar" MaxLength="10" />
+        </EntityType>-->
+  <EntityType Name="user_">
+    <Key>
+      <PropertyRef Name="use_id" />
+    </Key>
+    <Property Name="use_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="use_name" Type="varchar" MaxLength="50" />
+    <Property Name="use_age" Type="varchar" MaxLength="5" />
+    <Property Name="use_gender" Type="varchar" MaxLength="60" />
+    <Property Name="use_phon" Type="varchar" MaxLength="50" />
+    <Property Name="use_city" Type="varchar" MaxLength="50" />
+    <Property Name="use_pass" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="examModelStoreContainer">
+    <EntitySet Name="user_" EntityType="Self.user_" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
